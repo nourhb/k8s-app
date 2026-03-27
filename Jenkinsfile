@@ -6,12 +6,11 @@ pipeline {
     }
 
     stages {
-
-        stage('Clone') {
-            steps {
-                git 'https://github.com/nourhb/k8s-app.git'
-            }
-        }
+stage('Clone') {
+    steps {
+        git branch: 'main', url: 'https://github.com/nourhb/k8s-app.git'
+    }
+}
 
         stage('Build Image') {
             steps {
