@@ -4,7 +4,7 @@ metadata:
   name: web
   namespace: default   # 👈 مهم
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: web
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: nginx
+        image: nginx:latest
         ports:
         - containerPort: 80
