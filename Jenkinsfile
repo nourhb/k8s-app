@@ -14,7 +14,7 @@ stage('Clone') {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t $IMAGE .'
+                sh 'docker build -t nourhb/web-app:latest .'
             }
         }
 
