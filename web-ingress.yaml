@@ -4,6 +4,7 @@ metadata:
   name: web-ingress
   namespace: default
 spec:
+  ingressClassName: nginx   
   rules:
   - host: myapp.local
     http:
