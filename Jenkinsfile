@@ -14,7 +14,10 @@ stage('Clone') {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t nourhb/web-app:latest .'
+                sh '''
+apt update && apt install -y docker.io
+docker build -t nourhb/web-app:latest .
+'''
             }
         }
 
