@@ -1,10 +1,23 @@
 pipeline {
     agent any
+
+    environment {
+        IMAGE = "nourhb/web-app:latest"
+    }
+
     stages {
-        stage('Test') {
+
+        stage('Clone') {
             steps {
-                echo 'Hello Jenkins 🚀'
+                git 'https://github.com/nourhb/k8s-app.git'
             }
         }
+
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t $IMAGE .'
+            }
+        }
+
     }
 }
