@@ -4,9 +4,9 @@ metadata:
   name: web-ingress
   namespace: default   
 spec:
-  ingressClassName: nginx
   rules:
-  - http:
+  -host: myapp.local
+    http:
       paths:
       - path: /
         pathType: Prefix
